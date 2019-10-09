@@ -109,20 +109,42 @@ pendientes de tu proyecto anterior.
 - [ ] Sass
 - [ ] Maquetación
 
-### Angular
+### Frontend Development
 
-- [ ] Directivas estructurales (ngIf | ngFor)
-- [ ] Estilos de componentes (ngStyle | ngClass)
-- [ ] Manejos de rutas
-- [ ] Creación y uso de servicios
-- [ ] Creación y uso Observables
-- [ ] Uso de HttpClient
-- [ ] Uso de Modulos
-- [ ] @Input | @Ouput
+- [ ] Componentes
+- [ ] Manejo del estado
 
 ### PWA
 
+- [ ] Concepto
+- [ ] Utilidad
+- [ ] Que es [Workbox](https://developers.google.com/web/tools/workbox)
+- [ ] Qué es un `serviceWorker`
+
+### Angular
+
+- [ ] [Uso de Components | Templates](https://angular.io/guide/architecture-components#introduction-to-components)
+- [ ] [Directivas estructurales (ngIf / ngFor)](https://angular.io/guide/template-syntax#built-in-structural-directives)
+- [ ] [@Input | @Ouput](https://angular.io/guide/component-interaction#component-interaction)
+- [ ] [Creación y uso de servicios](https://angular.io/guide/architecture-services#providing-services)
+- [ ] [Manejos de rutas](https://angular.io/guide/router)
+- [ ] [Uso de Observables](https://angular.io/guide/observables-in-angular)
+- [ ] [Uso de HttpClient](https://angular.io/guide/http)
+- [ ] [Estilos de componentes (ngStyle / ngClass)](https://angular.io/guide/template-syntax#built-in-directives)
+
+
 ### React
+
+- [ ] [`JSX`](https://es.reactjs.org/docs/introducing-jsx.html)
+- [ ] [Componentes `class` y componentes `function`](https://es.reactjs.org/docs/components-and-props.html#function-and-class-components)
+- [ ] `props`
+- [ ] [Manejo de eventos](https://es.reactjs.org/docs/handling-events.html)
+- [ ] [Listas y keys](https://es.reactjs.org/docs/lists-and-keys.html)
+- [ ] [Renderizado condicional](https://es.reactjs.org/docs/conditional-rendering.html)
+- [ ] [Levantamiento de estados](https://es.reactjs.org/docs/lifting-state-up.html)
+- [ ] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
+- [ ] [`CSS` modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
+- [ ] [React Router](https://reacttraining.com/react-router/web)
 
 ### Firebase
 
@@ -132,19 +154,26 @@ pendientes de tu proyecto anterior.
 
 ### Testing
 - [ ] Testeo de tus interfaces
+- [ ] Testeo de componentes
 - [ ] Testeo asíncrono
 - [ ] Mocking
 
-### Git y Github
+### Colaboración en Github
 
-- [ ] Colaboración en Github
-- [ ] Organización en Github
+- [ ] Branches
+- [ ] Pull Requests
+- [ ] Tags
+
+### Organización en Github
+
+- [ ] Projects
+- [ ] Issues
+- [ ] Labels
+- [ ] Milestones
 
 ### Buenas prácticas de desarrollo
 
 - [ ] Modularización
-- [ ] Componentes
-- [ ] Manejo del estado de tu aplicacion
 - [ ] Nomenclatura / Semántica
 - [ ] Linting
 
