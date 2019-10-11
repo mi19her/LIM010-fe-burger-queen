@@ -1,22 +1,37 @@
-import React from 'react';
-// import logo from './logo.svg';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { Welcome } from './views/welcome.js';
+import { Waiter } from './views/waiter.js';
 import './App.css';
 
-const inicio = () => {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-link">Bienvenidos</h1>
-        <button className= "App-link" id="ingresar"> Ingresar</button>
-      </header>
-    </div>
+    <Router>
+      <div>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/waiter">
+            <Waiter />
+          </Route>
+          <Route path="/">
+            <Welcome />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
-export default inicio;
 
-const page2 = () => {
-    // return(
-
-    // );
+function About() {
+  return <h2>About</h2>;
 }
+
