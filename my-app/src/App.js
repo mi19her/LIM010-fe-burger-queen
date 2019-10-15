@@ -7,17 +7,15 @@ import {
 import { Welcome } from './views/welcome.js';
 import { Waiter } from './views/waiter.js';
 import './App.css';
+// import {pedidos} from './components/waiter-component.jsx';
+
 
 export const App = () => {
-  return (
+  return(
     <Router>
-      <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
           <Route path="/waiter">
             <Waiter />
           </Route>
@@ -25,13 +23,7 @@ export const App = () => {
             <Welcome />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
-}
-
-
-function About() {
-  return <h2>About</h2>;
 }
 

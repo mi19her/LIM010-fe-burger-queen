@@ -1,6 +1,7 @@
-import firebase from 'react-firebase-hooks';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
-export default {
+const firebaseConfig= {
       // Your web app's Firebase configuration
     apiKey: "AIzaSyCRUjRxgsnGbdWJrpP7UVHFeS0JEzM2Jw0",
     authDomain: "burger-queen-6ff61.firebaseapp.com",
@@ -13,4 +14,4 @@ export default {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+export default firebase;

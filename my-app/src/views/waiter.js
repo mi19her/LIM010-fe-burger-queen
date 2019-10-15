@@ -1,4 +1,5 @@
 import React from "react";
+import { Product } from '../components/Product'
 
 export const Waiter = () => {
     return(
@@ -8,7 +9,8 @@ export const Waiter = () => {
             </header>
             <main>
               <section>
-                <button>Desayuno</button>
+              <div className="App-logo"></div>
+                <Product></Product>
                 <button>Almuerzo y Cena</button>
               </section>
               <section>
@@ -16,7 +18,6 @@ export const Waiter = () => {
                   <input placeholder="N° de Mesa"></input>
                   <p>Lista de Pedidos</p>
                   <div></div>
-
               </section>
             </main>
         </div>
