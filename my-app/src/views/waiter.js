@@ -11,7 +11,7 @@ export const Waiter = () => {
               <section>
               <div className="App-logo"></div>
                 <Product></Product>
-                <button>Almuerzo y Cena</button>
+                {/* <button>Almuerzo y Cena</button> */}
               </section>
               <section>
                   <input placeholder="Nombre"></input>
