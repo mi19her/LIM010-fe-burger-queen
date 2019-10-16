@@ -3,7 +3,10 @@
 }
 
 .App-logo {
+  height: 30vmin;
+  background-repeat: no-repeat;
   height: 40vmin;
+  background-image: url('./img/logoBurger.png');
 }
 
 .App-header {
