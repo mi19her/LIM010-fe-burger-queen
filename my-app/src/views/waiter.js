@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from '../components/Product'
+import { Products } from '../components/Products'
 
 export const Waiter = () => {
     return(
@@ -10,7 +10,7 @@ export const Waiter = () => {
             <main>
               <section>
               <div className="App-logo"></div>
-                <Product></Product>
+                <Products></Products>
                 {/* <button>Almuerzo y Cena</button> */}
               </section>
               <section>

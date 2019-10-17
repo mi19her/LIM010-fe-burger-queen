@@ -53,13 +53,12 @@ import firebase from '../firebase-config';
 
 const { useState, useEffect } = React;
 
-export const Product = () => {
-  const [arr, setPedido] = useState([]);
-  const [tipo, setTipo] = useState('desayuno');
-  const Pedidos = 
+export const Products = () => {
+  const [arr, setOrder] = useState([]);
+  const [type, setType] = useState('desayuno');
 
   useEffect(() => {
-    firebase.firestore().collection("products").where("tipo", "==", tipo)
+    firebase.firestore().collection("products").where("tipo", "==", type)
       .get()
       .then(querySnapshot => {
         const array = [];
@@ -68,22 +67,27 @@ export const Product = () => {
   
         });
         // console.log(array);
-        setPedido(array);
+        setOrder(array);
       })
       .catch(error => {
         console.log("Error getting documents: ", error);
       });
-  }, [tipo])
+  }, [type])
 
   return (
     <div>
-      {/*<Desayuno  */}
-      <button onClick={()=> setTipo("desayuno")}> Desayuno </button>
+      {/* Productos Desayuno */}
+      <button onClick={()=> setType("desayuno")}> Desayuno </button>
+      {/* Productos Almuerzo y cena */}
+      <button onClick={() => setType("almuerzo_cena")}> Almuerzo y cena </button>
       {arr.map(products => {
-        return <li>{products.nombre}</li>
+        return (
+        <ul key={products.id}>
+          <li>{products.nombre}</li>
+          <li>{products.precio}</li>
+          <img src={products.url} alt={"imagen de product"} className="Width-product "/>
+        </ul>)
       })}
-      {/*<Pedidos/> */}
-      <button onClick={() => setTipo("almuerzo_cena")} id="almuerzo_cena"> Almuerzo y cena </button>
     </div>
   );
 };
