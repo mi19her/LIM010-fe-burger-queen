@@ -1,59 +1,57 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import firebase from '../firebase-config';
 
 
-// export const pedidos = () =>{
-//   firebase.firestore().collection('pedidos').add({
-//     cantidad : '1',
-//     nombre: 'hamburguesa',
-//     precio : 'S/ 5:00',
-//   });
-// }
 
-// export const Product = () =>{
-//     const handleClick = (e) => {
-//       e.preventDefault();
-//       console.log('hola eli'); 
-      
-//     }
-//     return (
-//       <button onClick={handleClick}>Desayuno</button>
-//     );
-//   }
-// const { useState } = React
-
-export const Pedidos = () =>{
-firebase.firestore().collection("products").where("tipo", "==", "desayuno")
+export const getlist = () =>{
+  return firebase.firestore().collection("products").where("tipo", "==", "desayuno" )
     .get()
-    .then(function(querySnapshot) {
+    .then((querySnapshot) => {
+      const arr = []
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log([doc.id, " => ", doc.data()]);
+            arr.push({id: doc.id, ...doc.data()})
+            
         });
+        return arr;
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
   }
 
-export const Desayuno = ({ click }) => (
+export const Breakfast = ({ click }) => (
   <div>
-    <button onClick={click} id ="desayuno"> Desayuno </button>
+    <button onClick={click}> Desayuno </button>
   </div>
 );
 
+export const Lunch = ({ click }) => (
+  <div>
+    <button onClick={click}> Almuerzo y Cena</button>
+  </div>
+);
+
+
 export const Product= () => {
-  
-  // const [arrBreakfast, takeBreakfast ] = useState([]);
+  const [arrlist, setlist ] = useState([]);
+
+  useEffect(() => {
+    getlist()
+    .then((result)=>{
+      setlist(result);
+    })
+  }, []);
+
   return (
     <div>
-      <h1>Hola</h1>
-      <Desayuno 
+      <Breakfast
         click={() => {
-          Pedidos();
         }} 
       />
-      {/* <Pedidos/> */}
+      <Lunch/>
+      {arrlist.map(element =>
+      <li>{element.nombre}</li>
+    )}
     </div>
   );
 };

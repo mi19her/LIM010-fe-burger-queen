@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Product } from '../components/Product'
-
+ 
 export const Waiter = () => {
+  const [name, setname] = useState(' ');
+  const functionName = (e)=>{
+    setname(e.target.value);
+    console.log(e.target.value);
+  }
     return(
         <div>
            <header>
@@ -10,11 +15,10 @@ export const Waiter = () => {
             <main>
               <section>
               <div className="App-logo"></div>
-                <Product></Product>
-                <button>Almuerzo y Cena</button>
+                <Product/>
               </section>
               <section>
-                  <input placeholder="Nombre"></input>
+                  <input placeholder="Nombre" value={name} onChange={functionName}></input>
                   <input placeholder="N° de Mesa"></input>
                   <p>Lista de Pedidos</p>
                   <div></div>
