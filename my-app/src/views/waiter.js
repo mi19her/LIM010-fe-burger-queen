@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import { Product } from '../components/Product'
- 
+import React from "react";
+import { Products } from '../components/Products'
+const { useState } = React;
 export const Waiter = () => {
   const [name, setname] = useState(' ');
   const functionName = (e)=>{
@@ -15,7 +15,8 @@ export const Waiter = () => {
             <main>
               <section>
               <div className="App-logo"></div>
-                <Product/>
+                <Products></Products>
+                {/* <button>Almuerzo y Cena</button> */}
               </section>
               <section>
                   <input placeholder="Nombre" value={name} onChange={functionName}></input>

@@ -8,7 +8,10 @@
   height: 40vmin;
   background-image: url('./img/logoBurger.png');
 }
-
+.Width-product {
+  width: 100px;
+  height: 100px;
+}
 .App-header {
   background-color: #282;
   min-height: 100vh;
