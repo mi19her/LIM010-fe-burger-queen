@@ -7,8 +7,6 @@ import {
 import { Welcome } from './views/welcome.js';
 import { Waiter } from './views/waiter.js';
 import './App.css';
-// import {pedidos} from './components/waiter-component.jsx';
-
 
 export const App = () => {
   return(
