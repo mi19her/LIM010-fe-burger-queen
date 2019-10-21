@@ -1,3 +1,4 @@
+$yellow-logo: #e8ba00;
 .App {
     text-align: center;
   }
@@ -5,14 +6,14 @@
     height: 30vmin;
     background-repeat: no-repeat;
     height: 40vmin;
-    background-image: url('./img/logoBurger.png');
+    background-image: url('../img/logoBurger.png');
   }
   .Width-product {
     width: 100px;
     height: 100px;
   }
   .App-header {
-    background-color: #282;
+    background-color: $yellow-logo;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,3 +27,7 @@
     color: #09d3ac;
   }
   
+  .Flex {
+    display: flex;
+    justify-content: space-around;
+  }

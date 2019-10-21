@@ -3,7 +3,7 @@ import firebase from '../firebase-config';
 
 const { useState, useEffect } = React;
 
-export const Products = () => {
+export const Products = ({addProductAtOrder}) => {
   const [arr, setOrder] = useState([]);
   const [type, setType] = useState('desayuno');
 
@@ -27,12 +27,12 @@ export const Products = () => {
     <div>
       <button onClick={()=> setType("desayuno")}> Desayuno </button>
       <button onClick={() => setType("almuerzo_cena")}> Almuerzo y cena </button>
-      {arr.map(products => {
+      {arr.map(product => {
         return (
-        <div key={products.id}>
-          <p>{products.nombre}</p>
-          <p>{products.precio}</p>
-          <img src={products.url} alt={"imagen de product"} className="Width-product "/>
+        <div key={product.id} onClick = {()=> addProductAtOrder(product)}>
+          <p>{product.nombre}</p>
+          <p>{product.precio}</p>
+          <img src={product.url} alt={"imagen de product"} className="Width-product "/>
         </div>)
       })}
     </div>
