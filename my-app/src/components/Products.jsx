@@ -16,7 +16,6 @@ export const Products = ({addProductAtOrder}) => {
           array.push({ id: doc.id, ...doc.data() });
   
         });
-        // console.log(array);
         setOrder(array);
       })
       .catch(error => {
@@ -26,13 +25,11 @@ export const Products = ({addProductAtOrder}) => {
 
   return (
     <div>
-      {/* Productos Desayuno */}
       <button onClick={()=> setType("desayuno")}> Desayuno </button>
-      {/* Productos Almuerzo y cena */}
       <button onClick={() => setType("almuerzo_cena")}> Almuerzo y cena </button>
       {arr.map(product => {
         return (
-        <div key={product.id} onClick={() => addProductAtOrder(product)}>
+        <div key={product.id} onClick = {()=> addProductAtOrder(product)}>
           <p>{product.nombre}</p>
           <p>{product.precio}</p>
           <img src={product.url} alt={"imagen de product"} className="Width-product "/>

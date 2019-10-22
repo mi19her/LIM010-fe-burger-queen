@@ -1,7 +1,8 @@
+$yellow-logo: #e8ba00;
 .App {
     text-align: center;
   }
-.App-logo {
+  .App-logo {
     height: 30vmin;
     background-repeat: no-repeat;
     height: 40vmin;
@@ -12,7 +13,7 @@
     height: 100px;
   }
   .App-header {
-    background-color: #282;
+    background-color: $yellow-logo;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@
     color: #09d3ac;
   }
   
-  .waiter{
+  .Flex {
     display: flex;
     justify-content: space-around;
   }

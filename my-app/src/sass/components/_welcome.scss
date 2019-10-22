@@ -1,0 +1,28 @@
+$red-logo: #cf1717;
+$orange-logo: #f0900a;
+$yellow-logo: #e8ba00;
+$text-color: white;
+$font-button: 15px;
+$spacing: 2px;
+.Burger-logo {
+    width: auto;
+}
+.Button-mesero {
+    background: $red-logo;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-style: none;
+        a {
+            text-decoration:none;
+            color: $text-color;
+            letter-spacing: $spacing;
+            font-size: $font-button;
+            &:hover {
+                color: #5e0000;
+            }
+        }
+        &:hover {
+            background: $text-color;
+        }
+
+}
