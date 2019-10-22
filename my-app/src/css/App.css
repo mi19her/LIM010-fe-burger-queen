@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #e8ba00;
+  background-color: #282;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,32 +29,9 @@
   color: #09d3ac;
 }
 
-.Flex {
+.waiter {
   display: flex;
   justify-content: space-around;
-}
-
-.Burger-logo {
-  width: auto;
-}
-
-.Button-mesero {
-  background: #cf1717;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border-style: none;
-}
-.Button-mesero a {
-  text-decoration: none;
-  color: white;
-  letter-spacing: 2px;
-  font-size: 15px;
-}
-.Button-mesero a:hover {
-  color: #5e0000;
-}
-.Button-mesero:hover {
-  background: white;
 }
 
 /*# sourceMappingURL=App.css.map */
