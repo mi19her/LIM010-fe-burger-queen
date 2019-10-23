@@ -30,14 +30,16 @@ export const Order = ({ products, cantidad }) => {
         <tbody >
         {products.map(product => (
             <tr key={product.id}>
-              <td><input type="number" min="1" max="100" defaultValue={product.cantidad} onChange={(e) => {
+              <td><input type="number" min="1" max="100" defaultValue={product.cantidad} onClick={(e) => {
               const p = e.target.value;
               cantidad(product.id, p)
-              console.log(e.target.value)
+              const subtotal = p * product.precio;
+              return( subtotal)
+              // console.log(p * product.precio)
               }}/></td>
               <td>{product.nombre}</td>
               <td>{product.precio}</td>
-              <td>{product.precio* product.cantidad }</td>
+              <td>{cantidad()}</td>
             </tr>
         ))}
         </tbody>

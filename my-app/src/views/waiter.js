@@ -8,15 +8,17 @@ export const Waiter = () => {
   const [selectProduct, setOrder] = useState([]);
   const incrementar = (prodId, cant = 1) => {
     console.log(cant, prodId)
-    let newcant = '';
-    selectProduct.map(element =>{
-      if(prodId === element.id) {
+    // let newcant = '';
+    selectProduct.map(element => {
+      // if(prodId === element.id) {
        element.cantidad = cant;
-        console.log('hola', element.cantidad)      
-      }
-      newcant= element.cantidad;
+      //  element.subtotal = element.cantidad*element.precio;
+        console.log('hola')      
+      
+      // newcant= element.cantidad;
+      return cant;
     })
-    return newcant;
+    
   }
 
     return(
