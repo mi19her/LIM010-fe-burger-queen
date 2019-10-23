@@ -33,13 +33,10 @@ export const Order = ({ products, cantidad }) => {
               <td><input type="number" min="1" max="100" defaultValue={product.cantidad} onClick={(e) => {
               const p = e.target.value;
               cantidad(product.id, p)
-              const subtotal = p * product.precio;
-              return( subtotal)
-              // console.log(p * product.precio)
               }}/></td>
               <td>{product.nombre}</td>
               <td>{product.precio}</td>
-              <td>{cantidad()}</td>
+              <td>{product.precio*product.cantidad}</td>
             </tr>
         ))}
         </tbody>

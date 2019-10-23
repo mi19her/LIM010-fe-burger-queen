@@ -34,8 +34,30 @@
   justify-content: space-around;
 }
 
+.Flex-header {
+  display: flex;
+  justify-content: center;
+  background: #e8ba00;
+}
+
+.Scroll {
+  overflow: scroll;
+  width: 400px;
+  text-align: center;
+}
+.Scroll div {
+  width: 40%;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid grey;
+}
+
 .Burger-logo {
   width: auto;
+}
+
+.Burger-log {
+  width: 100px;
 }
 
 .Button-mesero {
