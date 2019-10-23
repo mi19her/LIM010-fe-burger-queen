@@ -7,7 +7,6 @@ export const Order = ({ productos })=>{
       setname(e.target.value);
       console.log(e.target.value);
     }
-    console.log(productos)
     return(
         <div>
          <input placeholder="Nombre" value={name} onChange={functionName}></input>
@@ -21,16 +20,19 @@ export const Order = ({ productos })=>{
                  <td>Precio</td>
               </tr>
           </thead>
+          <tbody>
               {productos.map((p) => (
-                <tbody>
                 <tr key={p.id}>
-                 <td><input type="number" value="1"/></td>
+                 <td>{p.cantidad}</td>
                  <td>{p.nombre}</td>
                  <td>{p.precio}</td>
+                 <td><input type="image" alt="eliminar" src="https://img.icons8.com/windows/64/000000/xbox-x.png">
+                   </input></td>
                 </tr>
-                </tbody>
               ))}
+          </tbody>
           </table>
+          <button>ENVIAR</button>
         </div>
     )
 }

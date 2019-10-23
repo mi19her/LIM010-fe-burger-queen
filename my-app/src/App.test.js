@@ -7,3 +7,10 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// describe('iniciar Sesion', () => {
+//   it('Deberia iniciar sesion', () => signInWithEmailAndPassword('laboratoria@lab.com', '123456789')
+//     .then((user) => {
+//       expect(user.email).toBe('laboratoria@lab.com');
+//     }));
+// });

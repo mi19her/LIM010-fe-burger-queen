@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import firebase from '../firebase-config';
-
-const { useState, useEffect } = React;
 
 export const Products = ({addProductAtOrder}) => {
   const [arr, setOrder] = useState([]);
