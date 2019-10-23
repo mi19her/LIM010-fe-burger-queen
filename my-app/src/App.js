@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { Welcome } from './views/welcome.js';
 import { Waiter } from './views/waiter.js';
+
 import './css/App.css';
 
 export const App = () => {
