@@ -1,4 +1,10 @@
+$red-logo: #cf1717;
+$orange-logo: #f0900a;
 $yellow-logo: #e8ba00;
+$text-color: white;
+$font-button: 15px;
+$spacing: 2px;
+$pointer: pointer;
 .App {
     text-align: center;
   }
@@ -20,7 +26,7 @@ $yellow-logo: #e8ba00;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color:$text-color;
   }
   
   .App-link {
@@ -29,7 +35,7 @@ $yellow-logo: #e8ba00;
   
   .Flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .Flex-header {
     display: flex;
@@ -40,10 +46,84 @@ $yellow-logo: #e8ba00;
     overflow: scroll;
     width: 400px;
     text-align: center;
+    height: 450px;
      div {
       width: 40%;
+      height: 200px;
       display: inline-block;
-      margin: 10px;
+      margin: 5px;
       border: 1px solid grey;
+      vertical-align: text-bottom;
+      text-align: -webkit-center;
+      cursor: $pointer;
      }
+  }
+  table {
+    width: 100%;
+    border: 1px solid #000;
+    color: $text-color;
+    td th {
+      text-align: left;
+      vertical-align: top;
+      border-collapse: collapse;
+    }
+    i {
+      color: #e8ba00;
+      cursor: $pointer;
+    }
+  }
+  .Total {
+    background: $red-logo;
+    color: $text-color;
+    font-size: $font-button*2;
+    align-self: flex-end;
+    padding: 5px;
+  }
+  .Order {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+  }
+  div {
+    text-align: center;
+  }
+  p {
+    margin: 0;
+  }
+  .price {
+    background: #cf1717;
+    width: fit-content;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .name {
+    padding: 5px;
+    font-size: 15px;
+    height: 40px;
+    color: #403938;
+    font-weight: bold;
+  }
+  h2, label {
+    color: $text-color;
+  }
+  input {
+    width: fit-content;
+    border-style: none;
+  }
+
+
+  /* buttons */
+  @mixin buttons($padding, $color) {
+    padding: $padding;
+    background: $color;
+    border-radius: $padding/2;
+    font-size: $padding*1.5;
+  }
+  .buttonApp {
+    @include buttons(10px,$red-logo );
+    color: $text-color;
+    cursor: $pointer;
   }

@@ -1,3 +1,4 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
 .App {
   text-align: center;
 }
@@ -31,7 +32,7 @@
 
 .Flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .Flex-header {
@@ -44,12 +45,91 @@
   overflow: scroll;
   width: 400px;
   text-align: center;
+  height: 450px;
 }
 .Scroll div {
   width: 40%;
+  height: 200px;
   display: inline-block;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid grey;
+  vertical-align: text-bottom;
+  text-align: -webkit-center;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #000;
+  color: white;
+}
+table td th {
+  text-align: left;
+  vertical-align: top;
+  border-collapse: collapse;
+}
+table i {
+  color: #e8ba00;
+  cursor: pointer;
+}
+
+.Total {
+  background: #cf1717;
+  color: white;
+  font-size: 30px;
+  align-self: flex-end;
+  padding: 5px;
+}
+
+.Order {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+div {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+.price {
+  background: #cf1717;
+  width: fit-content;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.name {
+  padding: 5px;
+  font-size: 15px;
+  height: 40px;
+  color: #403938;
+  font-weight: bold;
+}
+
+h2, label {
+  color: white;
+}
+
+input {
+  width: fit-content;
+  border-style: none;
+}
+
+/* buttons */
+.buttonApp {
+  padding: 10px;
+  background: #cf1717;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
 }
 
 .Burger-logo {
