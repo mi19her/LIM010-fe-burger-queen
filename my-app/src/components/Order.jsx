@@ -3,7 +3,7 @@ import "../css/App.css";
 
 const { useState } = React;
 
-export const Order = ({ products, cantidad }) => {
+export const Order = ({ products, cantidad, deleteRow }) => {
   const [name, setName] = useState('');
 
   const functionName = (e) => {
@@ -44,6 +44,9 @@ export const Order = ({ products, cantidad }) => {
               <td>{product.nombre}</td>
               <td>{product.precio}</td>
               <td>{product.precio * product.cantidad}</td>
+              <td><input type="image" alt="eliminar" src="https://img.icons8.com/windows/64/000000/xbox-x.png"
+              onClick={() => { deleteRow(product)}}/>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -52,3 +55,5 @@ export const Order = ({ products, cantidad }) => {
     </div>
   )
 }
+
+

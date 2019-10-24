@@ -43,7 +43,12 @@ export const Waiter = () => {
               setOrder([...selectProduct, { ...product, cantidad: 1 }])
             }
           }} />
-          <Order products={selectProduct} cantidad={incrementar} />
+          <Order products={selectProduct} cantidad={incrementar} deleteRow={(element) => {
+            const newArray = selectProduct.filter(ele => {
+              return element.id !== ele.id;
+            })
+            setOrder(newArray)
+          }} />
         </section>
       </main>
     </div>
