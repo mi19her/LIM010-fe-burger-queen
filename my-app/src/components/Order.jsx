@@ -5,7 +5,6 @@ export const Order = ({ products, cantidad, deleteRow })=>{
     const [name, setname] = useState(' ');
     const functionName = (e)=>{
       setname(e.target.value);
-      console.log(e.target.value);
     }
     return(
         <div>
@@ -27,7 +26,6 @@ export const Order = ({ products, cantidad, deleteRow })=>{
               <td><input type="number" defaultValue={product.cantidad} onClick={(e) => {
               const p = e.target.value;
               cantidad(product.id, p)
-              // console.log(p * product.precio)
               }}/></td>
               <td>{product.nombre}</td>
               <td>{product.precio}</td>
