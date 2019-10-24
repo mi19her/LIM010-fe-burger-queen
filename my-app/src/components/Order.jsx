@@ -17,21 +17,24 @@ export const Order = ({ products, cantidad, deleteRow }) => {
   };
 
   return (
-    <div>
-      <input placeholder="Nombre" value={name} onChange={functionName} />
-      <input placeholder="N° de Mesa"></input>
+    <div className="Order">
+      <h2>PEDIDO</h2>
+      <div>
+        <label>Cliente: <input placeholder="Nombre" value={name} onChange={functionName}/></label><br></br>
+        <label>N° Mesa: <input placeholder="N° de Mesa"></input></label>
+      </div>
       {/* <p>DETALLE DE PEDIDO</p> */}
-      <table>
-
+      <table className="">
         <thead>
           <tr>
-            <th COLSPAN="4" >DETALLE DE PEDIDO</th>
+            <th colSpan="4" >DETALLE DE PEDIDO</th>
           </tr>
           <tr>
             <td>CANT.</td>
             <td>DESCRIPCIÓN</td>
             <td>PU</td>
             <td>SUBTOTAL</td>
+            <td>ELIMINAR</td>
           </tr>
         </thead>
         <tbody>
@@ -42,16 +45,14 @@ export const Order = ({ products, cantidad, deleteRow }) => {
                 cantidad(product.id, p)
               }} /></td>
               <td>{product.nombre}</td>
-              <td>{product.precio}</td>
-              <td>{product.precio * product.cantidad}</td>
-              <td><input type="image" alt="eliminar" src="https://img.icons8.com/windows/64/000000/xbox-x.png"
-              onClick={() => { deleteRow(product)}}/>
-              </td>
+              <td>S/.{product.precio}</td>
+              <td>S/.{product.precio * product.cantidad}</td>
+              <td><i class="fa fa-minus-circle" aria-hidden="true" onClick={() => { deleteRow(product) }}></i></td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p>TOTAL = {Total(products)}</p>
+      <p className="Total">TOTAL = S/.{Total(products)}</p>
     </div>
   )
 }
