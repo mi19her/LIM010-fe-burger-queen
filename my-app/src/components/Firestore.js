@@ -1,13 +1,15 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-export const addOrderFirebase = (cant, name, subtotal) => firebase.firestore().collection('order').add({
-    cant,
+export const addOrderFirebase = (name, mesa, cant, product, subtotal, total) => firebase.firestore().collection('order').add({
     name,
+    mesa,  
+    cant,
+    product,
     subtotal,
+    total
   });
-
 
 export const GetOrder = ()=>{
     const [arr, setgetOrder] = useState([]);
@@ -19,11 +21,10 @@ export const GetOrder = ()=>{
             array.push({ id: doc.id, ...doc.data() });
             console.log(array);
           });
-            // console.log(array);
             setgetOrder(array);
           })
           .catch(error => {
             console.log("Error getting documents: ", error);
           });
-      }, [type])
+      }, [arr])
 }
