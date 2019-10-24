@@ -31,3 +31,19 @@ $yellow-logo: #e8ba00;
     display: flex;
     justify-content: space-around;
   }
+  .Flex-header {
+    display: flex;
+    justify-content: center;
+    background: $yellow-logo;
+  }
+  .Scroll {
+    overflow: scroll;
+    width: 400px;
+    text-align: center;
+     div {
+      width: 40%;
+      display: inline-block;
+      margin: 10px;
+      border: 1px solid grey;
+     }
+  }
