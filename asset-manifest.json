@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/LIM010-fe-burger-queen/my-app/static/css/main.12b8e8bd.chunk.css",
-    "main.js": "/LIM010-fe-burger-queen/my-app/static/js/main.ed73f257.chunk.js",
-    "main.js.map": "/LIM010-fe-burger-queen/my-app/static/js/main.ed73f257.chunk.js.map",
-    "runtime-main.js": "/LIM010-fe-burger-queen/my-app/static/js/runtime-main.48f27612.js",
-    "runtime-main.js.map": "/LIM010-fe-burger-queen/my-app/static/js/runtime-main.48f27612.js.map",
-    "static/js/2.c2742071.chunk.js": "/LIM010-fe-burger-queen/my-app/static/js/2.c2742071.chunk.js",
-    "static/js/2.c2742071.chunk.js.map": "/LIM010-fe-burger-queen/my-app/static/js/2.c2742071.chunk.js.map",
-    "index.html": "/LIM010-fe-burger-queen/my-app/index.html",
-    "precache-manifest.f9b0a9c1738ad619ea1574800ab7c7bb.js": "/LIM010-fe-burger-queen/my-app/precache-manifest.f9b0a9c1738ad619ea1574800ab7c7bb.js",
-    "service-worker.js": "/LIM010-fe-burger-queen/my-app/service-worker.js",
-    "static/css/main.12b8e8bd.chunk.css.map": "/LIM010-fe-burger-queen/my-app/static/css/main.12b8e8bd.chunk.css.map",
-    "static/media/logoBurger.png": "/LIM010-fe-burger-queen/my-app/static/media/logoBurger.eda230cd.png"
+    "main.css": "/LIM010-fe-burger-queen/static/css/main.17b6d9a0.chunk.css",
+    "main.js": "/LIM010-fe-burger-queen/static/js/main.1cfa45dc.chunk.js",
+    "main.js.map": "/LIM010-fe-burger-queen/static/js/main.1cfa45dc.chunk.js.map",
+    "runtime-main.js": "/LIM010-fe-burger-queen/static/js/runtime-main.7cddb1c7.js",
+    "runtime-main.js.map": "/LIM010-fe-burger-queen/static/js/runtime-main.7cddb1c7.js.map",
+    "static/js/2.6d0e1e6a.chunk.js": "/LIM010-fe-burger-queen/static/js/2.6d0e1e6a.chunk.js",
+    "static/js/2.6d0e1e6a.chunk.js.map": "/LIM010-fe-burger-queen/static/js/2.6d0e1e6a.chunk.js.map",
+    "index.html": "/LIM010-fe-burger-queen/index.html",
+    "precache-manifest.1e3aa69f736176288ac2287c5e11199b.js": "/LIM010-fe-burger-queen/precache-manifest.1e3aa69f736176288ac2287c5e11199b.js",
+    "service-worker.js": "/LIM010-fe-burger-queen/service-worker.js",
+    "static/css/main.17b6d9a0.chunk.css.map": "/LIM010-fe-burger-queen/static/css/main.17b6d9a0.chunk.css.map",
+    "static/media/logoBurger.png": "/LIM010-fe-burger-queen/static/media/logoBurger.eda230cd.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.48f27612.js",
-    "static/js/2.c2742071.chunk.js",
-    "static/css/main.12b8e8bd.chunk.css",
-    "static/js/main.ed73f257.chunk.js"
+    "static/js/runtime-main.7cddb1c7.js",
+    "static/js/2.6d0e1e6a.chunk.js",
+    "static/css/main.17b6d9a0.chunk.css",
+    "static/js/main.1cfa45dc.chunk.js"
   ]
 }
