@@ -1,29 +1,33 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-// import React, { useState, useEffect } from "react";
+// import React, {useEffect, useState} from "react"
 
-export const addOrderFirebase = (cant, name, subtotal) => firebase.firestore().collection('order').add({
-    cant,
+export const addOrderFirebase = (name, mesa, cant, product, date) => firebase.firestore().collection('order').add({
     name,
-    subtotal,
+    mesa,  
+    cant,
+    product,
+    date,
   });
 
-
-export const GetOrder = ()=>{
-    const [arr, setgetOrder] = useState([]);
-    useEffect(() => {
-        firebase.firestore().collection('order').orderBy('date', 'desc')
-        .onSnapshot((querySnapshot) => {
-          const array = [];
-          querySnapshot.forEach((doc) => {
-            array.push({ id: doc.id, ...doc.data() });
-            console.log(array);
-          });
-            // console.log(array);
-            setgetOrder(array);
-          })
-          .catch(error => {
-            console.log("Error getting documents: ", error);
-          });
-      }, [type])
-}
+// export const GetOrder = ()=>{
+//     const [arr, setgetOrder] = useState([]);
+//     useEffect(() => {
+//         firebase.firestore().collection('order').orderBy('date', 'desc')
+//         .onSnapshot((querySnapshot) => {
+//           const array = [];
+//           querySnapshot.forEach((doc) => {
+//             array.push({ id: doc.id, ...doc.data() });
+//             console.log(array);
+//           });
+//             setgetOrder(array);
+//           })
+//           .catch(error => {
+//             console.log("Error getting documents: ", error);
+//           });
+//       })
+//       return(
+        
+//         addOrderFirebase()
+//       );
+// }
