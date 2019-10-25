@@ -3,12 +3,15 @@ import "../css/App.css";
 
 const { useState } = React;
 
-export const Order = ({ products, cantidad, deleteRow }) => {
+export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
   const [name, setName] = useState('');
+  const [mesa, setMesa] = useState('');
 
   const functionName = (e) => {
     setName(e.target.value);
-    console.log(e.target.value);
+  }
+  const functionMesa = (e) => {
+    setMesa(e.target.value);
   }
   const Total = (arr) => {
     let acum = 0;
@@ -21,7 +24,7 @@ export const Order = ({ products, cantidad, deleteRow }) => {
       <h2>PEDIDO</h2>
       <div>
         <label>Cliente: <input placeholder="Nombre" value={name} onChange={functionName}/></label><br></br>
-        <label>N° Mesa: <input placeholder="N° de Mesa"></input></label>
+        <label>N° Mesa: <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa} ></input></label>
       </div>
       {/* <p>DETALLE DE PEDIDO</p> */}
       <table className="">
@@ -47,12 +50,13 @@ export const Order = ({ products, cantidad, deleteRow }) => {
               <td>{product.nombre}</td>
               <td>S/.{product.precio}</td>
               <td>S/.{product.precio * product.cantidad}</td>
-              <td><i class="fa fa-minus-circle" aria-hidden="true" onClick={() => { deleteRow(product) }}></i></td>
+              <td><i className="fa fa-minus-circle" aria-hidden="true" onClick={() => { deleteRow(product) }}></i></td>
             </tr>
           ))}
         </tbody>
       </table>
       <p className="Total">TOTAL = S/.{Total(products)}</p>
+      <button onClick={() =>{addOrder(name, mesa)}}>Enviar</button>
     </div>
   )
 }
