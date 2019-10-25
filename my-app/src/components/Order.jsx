@@ -27,7 +27,7 @@ export const Order = ({ products, cantidad, deleteRow }) => {
       <table className="">
         <thead>
           <tr>
-            <th colSpan="4" >DETALLE DE PEDIDO</th>
+            <th colSpan="5" >DETALLE DE PEDIDO</th>
           </tr>
           <tr>
             <td>CANT.</td>
