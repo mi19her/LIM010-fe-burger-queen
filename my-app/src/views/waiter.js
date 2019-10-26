@@ -21,17 +21,14 @@ export const Waiter = () => {
   }
   const sendOrder = (name, mesa)=>{
     const allDate = new Date();
-    selectProduct.map(ele =>{
-      addOrderFirebase(name, mesa, ele.cantidad, ele.nombre, allDate)
-
-    })
-  }
+    selectProduct.map(ele => addOrderFirebase(name, mesa, ele.cantidad, ele.nombre, allDate))
+  };
 
   return (
     <div>
       <header className="Flex-header">
         {/* <h2> Burger Queen </h2> */}
-        <img src={logo} alt="imagen de product" className="Burger-log" />
+        <img src={logo} alt="imagen de product" className="Burger-log"/>
       </header>
       <main>
         <section className="Flex">

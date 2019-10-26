@@ -1,5 +1,5 @@
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
-.App {
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+.App, div {
   text-align: center;
 }
 
@@ -43,13 +43,12 @@
 
 .Scroll {
   overflow: scroll;
-  width: 400px;
   text-align: center;
-  height: 450px;
+  height: 425px;
 }
 .Scroll div {
   width: 40%;
-  height: 200px;
+  height: 190px;
   display: inline-block;
   margin: 5px;
   border: 1px solid grey;
@@ -59,9 +58,7 @@
 }
 
 table {
-  width: 100%;
-  border: 1px solid #000;
-  color: white;
+  margin-top: 15px;
 }
 table td th {
   text-align: left;
@@ -73,23 +70,17 @@ table i {
   cursor: pointer;
 }
 
-.Total {
-  background: #cf1717;
-  color: white;
-  font-size: 30px;
-  align-self: flex-end;
-  padding: 5px;
-}
-
 .Order {
   background: black;
+  color: white;
   display: flex;
   flex-direction: column;
-  min-width: 400px;
+  width: 50%;
+  position: relative;
 }
-
-div {
-  text-align: center;
+.Order div {
+  display: flex;
+  justify-content: space-around;
 }
 
 p {
@@ -120,6 +111,17 @@ h2, label {
 input {
   width: fit-content;
   border-style: none;
+  padding: 3px;
+}
+
+.menu {
+  width: 50%;
+}
+
+th, thead tr td {
+  border-bottom-style: ridge;
+  font-weight: bold;
+  font-size: smaller;
 }
 
 /* buttons */
@@ -130,6 +132,38 @@ input {
   font-size: 15px;
   color: white;
   cursor: pointer;
+}
+
+.Total {
+  background: #cf1717;
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 50%;
+  left: 0;
+}
+
+.Send {
+  background: #dcdcdc;
+  color: black;
+  font-size: 25px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 50%;
+  right: 0;
+  border-style: none;
+  height: 50px;
+  cursor: pointer;
+}
+.Send:hover {
+  background: #e8ba00;
+  color: white;
+  font-weight: bold;
 }
 
 .Burger-logo {

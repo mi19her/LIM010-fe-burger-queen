@@ -30,7 +30,7 @@ export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
       <table className="">
         <thead>
           <tr>
-            <th colSpan="4" >DETALLE DE PEDIDO</th>
+            <th colSpan="5" >DETALLE DE PEDIDO</th>
           </tr>
           <tr>
             <td>CANT.</td>
@@ -55,8 +55,8 @@ export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
           ))}
         </tbody>
       </table>
-      <p className="Total">TOTAL = S/.{Total(products)}</p>
-      <button onClick={() =>{addOrder(name, mesa)}}>Enviar</button>
+      <p className="Total">Total = S/.{Total(products)}</p>
+      <button className="Send" onClick={() =>{addOrder(name, mesa)}}>Enviar</button>
     </div>
   )
 }

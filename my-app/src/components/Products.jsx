@@ -21,11 +21,12 @@ export const Products = ({ addProductAtOrder }) => {
         console.log("Error getting documents: ", error);
       });
   }, [type])
-
+  
   return (
-    <div>
+    <div className="menu">
       <h1>LISTA DE PRODUCTOS</h1>
       <div>
+      
         <button className="buttonApp" onClick={() => setType("desayuno")}> Desayuno </button>
         <button className="buttonApp" onClick={() => setType("almuerzo_cena")}> Almuerzo y cena </button>
       </div>
