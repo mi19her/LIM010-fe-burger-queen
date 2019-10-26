@@ -70,16 +70,6 @@ table i {
   cursor: pointer;
 }
 
-.Total {
-  background: #cf1717;
-  color: white;
-  font-size: 30px;
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 .Order {
   background: black;
   color: white;
@@ -142,6 +132,38 @@ th, thead tr td {
   font-size: 15px;
   color: white;
   cursor: pointer;
+}
+
+.Total {
+  background: #cf1717;
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 50%;
+  left: 0;
+}
+
+.Send {
+  background: #dcdcdc;
+  color: black;
+  font-size: 25px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 50%;
+  right: 0;
+  border-style: none;
+  height: 50px;
+  cursor: pointer;
+}
+.Send:hover {
+  background: #e8ba00;
+  color: white;
+  font-weight: bold;
 }
 
 .Burger-logo {
