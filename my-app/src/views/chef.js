@@ -1,20 +1,17 @@
-import React from 'react'
-import logo from "../img/logoBurger.png";
+import React from "react";
 import "../css/App.css";
+import { GetOrder } from "../components/PendingOrders";
+import { Header } from "../components/Header";
+import { NavChef } from "../components/Nav-chef";
 
 export const Chef = () => {
-
-    return(
-        <div>
-            <header className="Flex-header">
-             <img src={logo} alt="imagen de product" className="Burger-log" />
-            </header>
-            <main>
-                <section>
-                 <button>Enviado</button>
-                 <button>Pendiente</button>
-                </section>
-            </main>
-        </div>
-    )
+  return (
+    <div>
+      <Header></Header>
+      {/* <button>Enviado</button>
+      <button>Pendiente</button> */}
+      <NavChef/>
+      <GetOrder/>
+    </div>
+  )
 }

@@ -5,7 +5,7 @@ $text-color: white;
 $font-button: 15px;
 $spacing: 2px;
 $pointer: pointer;
-.App {
+.App, div {
     text-align: center;
   }
   .App-logo {
@@ -44,12 +44,12 @@ $pointer: pointer;
   }
   .Scroll {
     overflow: scroll;
-    width: 400px;
+    // width: 400px;
     text-align: center;
-    height: 450px;
+    height: 425px;
      div {
       width: 40%;
-      height: 200px;
+      height: 190px;
       display: inline-block;
       margin: 5px;
       border: 1px solid grey;
@@ -59,9 +59,7 @@ $pointer: pointer;
      }
   }
   table {
-    width: 100%;
-    border: 1px solid #000;
-    color: $text-color;
+    margin-top: $font-button;
     td th {
       text-align: left;
       vertical-align: top;
@@ -72,21 +70,18 @@ $pointer: pointer;
       cursor: $pointer;
     }
   }
-  .Total {
-    background: $red-logo;
-    color: $text-color;
-    font-size: $font-button*2;
-    align-self: flex-end;
-    padding: 5px;
-  }
+  
   .Order {
     background: black;
+    color: $text-color;
     display: flex;
     flex-direction: column;
-    min-width: 400px;
-  }
-  div {
-    text-align: center;
+    width: 50%;
+    position: relative;
+    div {
+      display: flex;
+      justify-content: space-around;
+    }
   }
   p {
     margin: 0;
@@ -110,11 +105,18 @@ $pointer: pointer;
     color: $text-color;
   }
   input {
-    width: fit-content;
+    width: 50%;
     border-style: none;
+    padding: 3px;
   }
-
-
+  .menu {
+    width: 50%;
+  }
+  th, thead tr td {
+    border-bottom-style: ridge;
+    font-weight: bold;
+    font-size: smaller;
+  }
   /* buttons */
   @mixin buttons($padding, $color) {
     padding: $padding;
@@ -126,4 +128,31 @@ $pointer: pointer;
     @include buttons(10px,$red-logo );
     color: $text-color;
     cursor: $pointer;
+  }
+  @mixin buttons-order($color, $background, $font) {
+    background: $background;
+    color: $color;
+    font-size: $font;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 50%;
+    // font-weight: bold;
+  }
+  .Total {
+    @include buttons-order($text-color,$red-logo ,$font-button*2);
+    left: 0;
+  }
+  .Send {
+    @include buttons-order(black, #dcdcdc ,25px );
+    right: 0;
+    border-style: none;
+    height: 50px;
+    cursor: $pointer;
+    &:hover {
+      background: $yellow-logo;
+      color: $text-color;
+      font-weight: bold;
+    }
   }

@@ -3,7 +3,7 @@ import firebase from '../firebase-config';
 import '../css/App.css';
 
 export const Products = ({ addProductAtOrder }) => {
-  const [arr, setOrder] = useState([]);
+  const [arr, setProducts] = useState([]);
   const [type, setType] = useState('desayuno');
 
   useEffect(() => {
@@ -15,15 +15,15 @@ export const Products = ({ addProductAtOrder }) => {
           array.push({ id: doc.id, ...doc.data() });
 
         });
-        setOrder(array);
+        setProducts(array);
       })
       .catch(error => {
         console.log("Error getting documents: ", error);
       });
   }, [type])
-
+  
   return (
-    <div>
+    <div className="menu">
       <h1>LISTA DE PRODUCTOS</h1>
       <div>
         <button className="buttonApp" onClick={() => setType("desayuno")}> Desayuno </button>

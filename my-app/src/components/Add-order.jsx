@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/App.css";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const { useState } = React;
 
-export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
+export const Order = ({ products, cantidad, total, deleteRow}) => {
   const [name, setName] = useState('');
   const [mesa, setMesa] = useState('');
 
@@ -13,24 +15,32 @@ export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
   const functionMesa = (e) => {
     setMesa(e.target.value);
   }
-  const Total = (arr) => {
-    let acum = 0;
-    arr.map(p => acum += p.precio * p.cantidad);
-    return acum;
-  };
-
+  const addOrder = (name, mesa, product, date, estado, total) => firebase.firestore().collection('order').add({
+    name,
+    mesa,  
+    product,
+    date,
+    estado,
+    total,
+  });
+  const reload = () => {
+    window.location.reload(true);
+  }
+  
   return (
     <div className="Order">
       <h2>PEDIDO</h2>
+      <p>{(new Date()).getHours()}:{(new Date()).getMinutes()}:{(new Date()).getSeconds()}</p>
       <div>
         <label>Cliente: <input placeholder="Nombre" value={name} onChange={functionName}/></label><br></br>
         <label>N° Mesa: <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa} ></input></label>
       </div>
+      
       {/* <p>DETALLE DE PEDIDO</p> */}
       <table className="">
         <thead>
           <tr>
-            <th colSpan="4" >DETALLE DE PEDIDO</th>
+            <th colSpan="5" >DETALLE DE PEDIDO</th>
           </tr>
           <tr>
             <td>CANT.</td>
@@ -55,10 +65,8 @@ export const Order = ({ products, cantidad, deleteRow, addOrder}) => {
           ))}
         </tbody>
       </table>
-      <p className="Total">TOTAL = S/.{Total(products)}</p>
-      <button onClick={() =>{addOrder(name, mesa)}}>Enviar</button>
+      <p className="Total">Total = S/.{total()}</p>
+      <button className="Send" onClick={() =>{addOrder(name, mesa, products, new Date(), "pendiente", total()); reload()}}>Enviar</button>
     </div>
   )
 }
-
-
