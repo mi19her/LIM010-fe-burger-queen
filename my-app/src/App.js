@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { Welcome } from './views/welcome.js';
 import { Waiter } from './views/waiter.js';
+import { Chef } from './views/chef.js';
 
 import './css/App.css';
 
@@ -20,6 +21,9 @@ export const App = () => {
           </Route>
           <Route path="/">
             <Welcome />
+          </Route>
+          <Route path="/chef">
+            <Chef />
           </Route>
         </Switch>
     </Router>

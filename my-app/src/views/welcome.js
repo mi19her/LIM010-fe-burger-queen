@@ -9,7 +9,8 @@ export const Welcome = () => {
       {/* <header className="App-header"> */}
         {/* <h1 className="App-link">Bienvenidos</h1> */}
         <img src={logo} alt="imagen de product" className="Burger-logo" />
-        <button className="Button-mesero" id="ingresar"><Link to="/waiter"> Mesero </Link></button>
+        <button className="Button-mesero"><Link to="/waiter"> Mesero </Link></button>
+        <button className="Button-mesero" ><Link to="/chef"> Jefe de Cocina </Link></button>
       {/* </header> */}
     </div>
   )

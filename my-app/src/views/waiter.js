@@ -5,8 +5,6 @@ import { Order } from '../components/Order';
 import "../css/App.css";
 import {addOrderFirebase} from "../components/Firestore"
 
-
-
 export const Waiter = () => {
   const [selectProduct, setOrder] = useState([]);
 
@@ -23,7 +21,7 @@ export const Waiter = () => {
     const allDate = new Date();
     selectProduct.map(ele =>{
       addOrderFirebase(name, mesa, ele.cantidad, ele.nombre, allDate)
-
+    return ele;
     })
   }
 
