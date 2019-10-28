@@ -6,7 +6,7 @@ export const NavWaiter = () => {
   return (
     <div className="Nav-waiter">
       <button className="Nav-btn" id=""><Link to="/"> Home </Link></button>
-      <button className="Nav-btn" id=""><Link to=""> Pedidos listos </Link></button>
+      <button className="Nav-btn" id=""><Link to="/ready"> Pedidos listos </Link></button>
     </div>
   )
 }

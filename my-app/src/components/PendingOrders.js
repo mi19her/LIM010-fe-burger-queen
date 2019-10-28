@@ -5,8 +5,9 @@ import { OrderStructure } from "../components/OrderStructure";
 
 export const GetOrder = () => {
   const [arrOrders, setgetOrder] = useState([]);
+  const []
   useEffect(() => {
-    firebase.firestore().collection('order').where("estado", "==", "pendiente").orderBy('date', 'asc')
+    firebase.firestore().collection('order').where("estado", "==", "listo").orderBy('date', 'asc')
       .get()
       .then(querySnapshot => {
         const array = [];
