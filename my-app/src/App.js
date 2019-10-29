@@ -1,31 +1,26 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Welcome } from './views/welcome.js';
 import { Waiter } from './views/waiter.js';
-import { Chef } from './views/chef.js'
+import { Chef } from './views/chef.js';
 import './css/App.css';
 
 export const App = () => {
-  return(
+  return (
     <Router>
-        {/* A <Switch> looks through its children <Route>s and
+      {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
+      <Switch>
         <Route path="/chef">
-            <Chef />
-          </Route>
-          <Route path="/waiter">
-            <Waiter />
-          </Route>
-          <Route path="/">
-            <Welcome />
-          </Route>
-        </Switch>
+          <Chef />
+        </Route>
+        <Route path="/waiter">
+          <Waiter />
+        </Route>
+        <Route path="/">
+          <Welcome />
+        </Route>
+      </Switch>
     </Router>
   );
-}
-
+};

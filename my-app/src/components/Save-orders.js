@@ -1,9 +1,12 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-export const addOrderFirebase = (name, mesa, product, date, estado, total) => firebase.firestore().collection('order').add({
+export const addOrderFirebase = (name, mesa, product, date, estado, total) => firebase
+  .firestore()
+  .collection('order')
+  .add({
     name,
-    mesa,  
+    mesa,
     product,
     date,
     estado,

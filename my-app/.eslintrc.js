@@ -29,5 +29,6 @@ module.exports = {
     'no-console':1,
     'no-case-declarations':0,
     'import/prefer-default-export': 0,
+    'linebreak-style': 0,
   },
 };
