@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../firebase-config';
+import firebase from '../firebase';
 import '../css/App.css';
 
 export const Products = ({ addProductAtOrder }) => {
@@ -12,14 +12,14 @@ export const Products = ({ addProductAtOrder }) => {
       .collection('products')
       .where('tipo', '==', type)
       .get()
-      .then((querySnapshot) => {
+      .then(querySnapshot => {
         const array = [];
-        querySnapshot.forEach((doc) => {
+        querySnapshot.forEach(doc => {
           array.push({ id: doc.id, ...doc.data() });
         });
         setProducts(array);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log('Error getting documents: ', error);
       });
   }, [type]);
@@ -30,22 +30,20 @@ export const Products = ({ addProductAtOrder }) => {
       <div>
         <button className="buttonApp" onClick={() => setType('desayuno')}>
           {' '}
-          Desayuno
-          {' '}
+          Desayuno{' '}
         </button>
         <button className="buttonApp" onClick={() => setType('almuerzo_cena')}>
           {' '}
-          Almuerzo y cena
-          {' '}
+          Almuerzo y cena{' '}
         </button>
       </div>
       <div className="Scroll">
-        {arr.map((product) => {
+        {arr.map(product => {
           return (
             <div key={product.id} onClick={() => addProductAtOrder(product)}>
               <p className="name">{product.nombre}</p>
               <p className="price">
-S/.
+                S/.
                 {product.precio}
               </p>
               <img src={product.url} alt="imagen de product" className="Width-product " />

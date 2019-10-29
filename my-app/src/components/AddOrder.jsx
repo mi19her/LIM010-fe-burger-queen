@@ -5,7 +5,7 @@ import 'firebase/firestore';
 
 const { useState } = React;
 
-export const Order = ({ products, cantidad, total, deleteRow, order }) => {
+export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
   const [name, setName] = useState('');
   const [mesa, setMesa] = useState('');
 
@@ -27,6 +27,7 @@ export const Order = ({ products, cantidad, total, deleteRow, order }) => {
         estado,
         total,
       });
+
   const validateOrder = () => {
     return products.length > 0 && name.length > 0 && mesa.length > 0;
   };
@@ -43,13 +44,11 @@ export const Order = ({ products, cantidad, total, deleteRow, order }) => {
         <label>
           Cliente: <input placeholder="Nombre" value={name} onChange={functionName} />
         </label>
-        <br />
+        <br></br>
         <label>
-          N° Mesa: <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa} />
+          N° Mesa: <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa}></input>
         </label>
       </div>
-
-      {/* <p>DETALLE DE PEDIDO</p> */}
       <table className="">
         <thead>
           <tr>
@@ -79,14 +78,8 @@ export const Order = ({ products, cantidad, total, deleteRow, order }) => {
                 />
               </td>
               <td>{product.nombre}</td>
-              <td>
-                S/.
-                {product.precio}
-              </td>
-              <td>
-                S/.
-                {product.precio * product.cantidad}
-              </td>
+              <td>S/.{product.precio}</td>
+              <td>S/.{product.precio * product.cantidad}</td>
               <td>
                 <i
                   className="fa fa-minus-circle"
@@ -94,16 +87,13 @@ export const Order = ({ products, cantidad, total, deleteRow, order }) => {
                   onClick={() => {
                     deleteRow(product);
                   }}
-                />
+                ></i>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="Total">
-        Total = S/.
-        {total()}
-      </p>
+      <p className="Total">Total = S/.{total()}</p>
       <button
         className="Send"
         onClick={() => {
