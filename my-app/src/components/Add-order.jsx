@@ -25,7 +25,7 @@ export const Order = ({ products, cantidad, total, deleteRow, order}) => {
 				product,
 				date,
 				estado,
-				total,
+        total,
 			});
 	const validateOrder = () => {
 		return products.length > 0 && name.length > 0 && mesa.length > 0;
@@ -99,7 +99,7 @@ export const Order = ({ products, cantidad, total, deleteRow, order}) => {
 				className="Send"
 				onClick={() => {
 					if (!disableSubmitButton) {
-            addOrder(name, mesa, products, new Date(), 'pendiente', total());
+            addOrder(name, mesa, products, new Date(), 'pendiente', total(),);
             order([]);
             setName('');
             setMesa('');
