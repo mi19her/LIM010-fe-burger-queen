@@ -146,7 +146,7 @@ th, thead tr td {
 }
 
 .Send {
-  background: #dcdcdc;
+  background: #e8ba00;
   color: black;
   font-size: 25px;
   padding: 5px;
@@ -159,10 +159,13 @@ th, thead tr td {
   height: 50px;
   cursor: pointer;
 }
-.Send:hover {
+.Send:not(:disabled):hover {
   background: #e8ba00;
   color: white;
   font-weight: bold;
+}
+.Send:disabled {
+  background: #ddd;
 }
 
 .Status {
@@ -232,7 +235,7 @@ th, thead tr td {
 .btn-nav {
   position: absolute;
   right: 10px;
-  top: 30px;
+  top: 40px;
   background: none;
   border-style: none;
 }

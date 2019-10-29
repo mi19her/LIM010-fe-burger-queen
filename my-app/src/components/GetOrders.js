@@ -6,7 +6,7 @@ import '../css/App.css';
 
 export const GetOrders = () => {
 	const [orders, setOrders] = useState([]);
-	const [state, setState] = useState('pendiente')
+	const [state, setState] = useState('pendiente');
 
 	useEffect(() => {
 		firebase
@@ -14,21 +14,35 @@ export const GetOrders = () => {
 			.collection('order')
 			.where('estado', '==', state)
 			.orderBy('date', 'asc')
-			.onSnapshot((querySnapshot => {
+			.onSnapshot(querySnapshot => {
 				setOrders(querySnapshot.docs.map(snapOrder => ({ id: snapOrder.id, ...snapOrder.data() })));
-			}))
+			});
 	}, [state]);
 
-	const Ready = id => {
+	const Ready = ({ id, date }) => {
+		let duration = new Date() - date.toDate();
+		const addZ = (n) =>{
+			return (n<10? '0':'') + n;
+		  }
+		  const ms = duration % 1000;
+		  duration = (duration - ms) / 1000;
+		  const secs = duration % 60;
+		  duration = (duration - secs) / 60;
+		  const mins = duration % 60;
+		  const hrs = (duration -mins)/60;
+	     const durationTime = addZ(hrs)+ ':'+ addZ(mins)+ ':' + addZ(secs);
+        // const durationTime = (duration / (1000 * 60)).toFixed(2);
 		firebase
 			.firestore()
 			.collection('order')
 			.doc(id)
 			.update({
 				estado: 'listo',
+				duration: durationTime,
 			});
 	};
-	const Delivered = id => {
+
+	const Delivered = ({ id }) => {
 		firebase
 			.firestore()
 			.collection('order')
@@ -39,7 +53,7 @@ export const GetOrders = () => {
 	};
 
 	return (
-    <div>
+		<div>
 		<nav className="Nav">
 			{/* <button className="Nav-btn" id=""><Link to="/"> Home </Link></button> */}
 			<ul>
@@ -48,20 +62,7 @@ export const GetOrders = () => {
 				<li className="Nav-btn" onClick={() => setState("entregado")}>Entregados</li>
 			</ul>
       </nav>
-			<OrderStructure nameButton={state === 'pendiente' ? 'Listo' : 'Entregado'} arr={orders} update={
-				state === 'pendiente' ?
-					Ready : Delivered} />
+			<OrderStructure arr={orders} setOrderToReady={Ready} setOrderToDelivered={Delivered} />
 		</div>
-		// <div>
-		//   {/* <button className="Nav-btn" id=""><Link to="/"> Home </Link></button> */}
-		//   <div className="Nav">
-		//   <button className="Nav-btn" onClick={() => setState("pendiente")}>Pedidos pendientes</button>
-		//   <button className="Nav-btn" onClick={() => setState("listo")}>Pedidos listos</button>
-		//   <button className="Nav-btn" onClick={() => setState("entregado")}>Pedidos entregados</button>
-		//   </div>
-		//   <OrderStructure nameButton={state === 'pendiente'? 'Listo': 'Entregado'} arr={orders} update={
-		//     state === 'pendiente'?
-		//     Ready:Delivered} />
-		// </div>
-	)
+	);
 };

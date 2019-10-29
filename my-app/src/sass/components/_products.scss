@@ -125,7 +125,7 @@ $pointer: pointer;
     font-size: $padding*1.5;
   }
   .buttonApp {
-    @include buttons(10px,$red-logo );
+    @include buttons(10px,$red-logo);
     color: $text-color;
     cursor: $pointer;
   }
@@ -145,15 +145,18 @@ $pointer: pointer;
     left: 0;
   }
   .Send {
-    @include buttons-order(black, #dcdcdc ,25px );
+    @include buttons-order(black, $yellow-logo ,25px );
     right: 0;
     border-style: none;
     height: 50px;
     cursor: $pointer;
-    &:hover {
+    &:not(:disabled):hover {
       background: $yellow-logo;
       color: $text-color;
       font-weight: bold;
+    }
+    &:disabled {
+      background: #ddd;
     }
   }
 .Status {

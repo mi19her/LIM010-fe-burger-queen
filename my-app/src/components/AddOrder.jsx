@@ -92,6 +92,7 @@ export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
             </tr>
           ))}
         </tbody>
+        
       </table>
       <p className="Total">Total = S/.{total()}</p>
       <button
