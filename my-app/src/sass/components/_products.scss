@@ -39,7 +39,7 @@ $pointer: pointer;
   }
   .Flex-header {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     background: $yellow-logo;
   }
   .Scroll {
@@ -156,3 +156,13 @@ $pointer: pointer;
       font-weight: bold;
     }
   }
+.Status {
+  @extend .Order;
+  display: inline-flex;
+  margin: 10px;
+  width: 47%;
+  button {
+    position: absolute;
+    top: 0;
+  }
+}

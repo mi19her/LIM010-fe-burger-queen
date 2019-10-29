@@ -1,22 +1,47 @@
-// .Nav-btn {
-//     @include buttons(5px, $red-logo);
-// }
-.Nav-waiter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-items: center; */
-    height: 104px;
-    margin-right: 20px;
-    button {
-        @include buttons(8px, #000000 );
-        cursor: $pointer;
-        a {
-            text-decoration:none;
-            color: $text-color;
-        }
+.Nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 10px;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+      box-sizing: border-box;
+      height: 104px;
+      display: inline-flex;
+      align-items: center;
+      color: $text-color;
+      letter-spacing: $spacing;
+      font-weight: 500;
+      &:hover {
+        background: black;
+        
+      }  
     }
+  }
+}
+.btn-nav { 
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  background: none;
+  border-style: none;
+  a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 15px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background: #cf1717;
+    border-radius: 5px;
+    // &:hover {
+    //   background: $text-color;
+    //   color: #5e0000;
+    // }
+  }
 }

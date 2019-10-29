@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Products } from '../components/Products';
 import { AddOrder } from '../components/AddOrder';
 import { Header } from '../components/Header';
+// import { GetOrders } from "../components/GetOrders";
+import { Link } from "react-router-dom";
 import "../css/App.css";
 
 export const Waiter = () => {
@@ -25,6 +27,7 @@ export const Waiter = () => {
   return (
     <div>
       <Header></Header>
+      <button className="btn-nav"><Link to="/chef"> Estados de pedidos </Link></button>
       <main>
         <section className="Flex">
           <Products addProductAtOrder={(product) => {

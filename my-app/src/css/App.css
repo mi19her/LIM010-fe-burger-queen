@@ -37,7 +37,6 @@
 
 .Flex-header {
   display: flex;
-  justify-content: center;
   background: #e8ba00;
 }
 
@@ -70,16 +69,15 @@ table i {
   cursor: pointer;
 }
 
-.Order {
+.Order, .Status {
   background: black;
   color: white;
   display: flex;
   flex-direction: column;
   width: 50%;
   position: relative;
-  margin-bottom: 3%;
 }
-.Order div {
+.Order div, .Status div {
   display: flex;
   justify-content: space-around;
 }
@@ -148,7 +146,7 @@ th, thead tr td {
 }
 
 .Send {
-  background-color: #e8ba00;
+  background: #dcdcdc;
   color: black;
   font-size: 25px;
   padding: 5px;
@@ -161,13 +159,20 @@ th, thead tr td {
   height: 50px;
   cursor: pointer;
 }
-.Send:not(:disabled):hover {
-  background-color: #c7a005;
+.Send:hover {
+  background: #e8ba00;
   color: white;
   font-weight: bold;
 }
-.Send:disabled {
-  background-color: #ddd;
+
+.Status {
+  display: inline-flex;
+  margin: 10px;
+  width: 47%;
+}
+.Status button {
+  position: absolute;
+  top: 0;
 }
 
 .Burger-logo {
@@ -183,6 +188,7 @@ th, thead tr td {
   padding: 10px 15px;
   border-radius: 5px;
   border-style: none;
+  margin-bottom: 10px;
 }
 .Button-mesero a {
   text-decoration: none;
@@ -197,27 +203,48 @@ th, thead tr td {
   background: white;
 }
 
-.Nav-waiter {
+.Nav {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  /* align-items: center; */
-  height: 104px;
-  margin-right: 20px;
 }
-.Nav-waiter button {
-  padding: 8px;
-  background: #000000;
-  border-radius: 4px;
-  font-size: 12px;
+.Nav ul {
+  margin: 0;
+  padding: 0;
+}
+.Nav ul li {
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
   cursor: pointer;
+  box-sizing: border-box;
+  height: 104px;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
-.Nav-waiter button a {
+.Nav ul li:hover {
+  background: black;
+}
+
+.btn-nav {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  background: none;
+  border-style: none;
+}
+.btn-nav a {
   text-decoration: none;
   color: white;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  background: #cf1717;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */

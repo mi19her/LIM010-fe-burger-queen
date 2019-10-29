@@ -6,10 +6,10 @@ export const OrderStructure = ({arr,update, nameButton}) => {
         <div>
           {arr.map(product => {
             return (
-              <div className="Order" key={product.id}>
+              <div className="Status" key={product.id}>
               <h2>PEDIDO {product.estado}</h2>         
-                <p className="">{product.name}</p>
-                <p className="">{product.mesa}</p>
+                <p className="">Cliente: {product.name}</p>
+                <p className="">N° mesa: {product.mesa}</p>
                 <p className="">Hora de Pedido: {product.date.toDate().getHours()}{':'}{product.date.toDate().getMinutes()}</p>
                 {/* <p className="">{product.estado}</p> */}
             <table className="">
