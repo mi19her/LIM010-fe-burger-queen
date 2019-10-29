@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/App.css';
 
-
 export const OrderStructure = ({
 	arr,
 	setOrderToReady,
@@ -12,7 +11,7 @@ export const OrderStructure = ({
 		<div>
 			{arr.map(product => {
 				return (
-					<div className="Order" key={product.id}>
+					<div className="Status" key={product.id}>
 						<h2>PEDIDO {product.estado}</h2>
 						<p className="">Cliente: {product.name}</p>
 						<p className="">N° de Mesa: {product.mesa}</p>

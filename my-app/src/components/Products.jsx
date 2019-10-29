@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../firebase-config';
+import firebase from '../firebase';
 import '../css/App.css';
 
 export const Products = ({ addProductAtOrder }) => {

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Products } from '../components/Products';
-import { Order } from '../components/Add-order';
+import { AddOrder } from '../components/AddOrder';
 import { Header } from '../components/Header';
-import { NavWaiter } from '../components/Nav-waiter';
+// import { GetOrders } from "../components/GetOrders";
+import { Link } from "react-router-dom";
 import "../css/App.css";
 
 export const Waiter = () => {
@@ -26,7 +27,7 @@ export const Waiter = () => {
   return (
     <div>
       <Header></Header>
-      <NavWaiter></NavWaiter>
+      <button className="btn-nav"><Link to="/chef"> Estados de pedidos </Link></button>
       <main>
         <section className="Flex">
           <Products addProductAtOrder={(product) => {
@@ -46,7 +47,7 @@ export const Waiter = () => {
               setOrder([...selectProduct, { ...product, cantidad: 1 }])
             }
           }} />
-          <Order order={setOrder} products={selectProduct} cantidad={incrementar} total={Total} deleteRow={(element) => {
+          <AddOrder order={setOrder} products={selectProduct} cantidad={incrementar} total={Total} deleteRow={(element) => {
             const newArray = selectProduct.filter(ele => {
               return element.id !== ele.id;
             })
