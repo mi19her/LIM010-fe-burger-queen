@@ -1,4 +1,9 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+body {
+  min-height: 100vh;
+  background: black;
+}
+
 .App, div {
   text-align: center;
 }
@@ -43,7 +48,7 @@
 .Scroll {
   overflow: scroll;
   text-align: center;
-  height: 425px;
+  height: 440px;
 }
 .Scroll div {
   width: 40%;
@@ -115,6 +120,7 @@ input {
 
 .menu {
   width: 50%;
+  background: white;
 }
 
 th, thead tr td {
@@ -172,10 +178,35 @@ th, thead tr td {
   display: inline-flex;
   margin: 10px;
   width: 47%;
+  background: #393a40;
+}
+.Status h2 {
+  margin: 30px 0 0px 0;
+  color: #e8ba00;
+}
+.Status p {
+  margin: 0 10px;
+  width: fit-content;
+}
+.Status p span {
+  color: #e8ba00;
+  font-weight: 300;
 }
 .Status button {
   position: absolute;
   top: 0;
+  background: #cf1717;
+  border-style: none;
+  color: white;
+  padding: 8px;
+}
+.Status .tot {
+  margin: 0;
+  width: auto;
+  padding: 5px;
+  border-top: 3px solid;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .Burger-logo {

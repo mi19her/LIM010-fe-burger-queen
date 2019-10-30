@@ -5,6 +5,11 @@ $text-color: white;
 $font-button: 15px;
 $spacing: 2px;
 $pointer: pointer;
+
+body {
+  min-height: 100vh;
+  background: black;
+}
 .App, div {
     text-align: center;
   }
@@ -44,9 +49,8 @@ $pointer: pointer;
   }
   .Scroll {
     overflow: scroll;
-    // width: 400px;
     text-align: center;
-    height: 425px;
+    height: 440px;
      div {
       width: 40%;
       height: 190px;
@@ -111,6 +115,7 @@ $pointer: pointer;
   }
   .menu {
     width: 50%;
+    background: $text-color;
   }
   th, thead tr td {
     border-bottom-style: ridge;
@@ -164,8 +169,34 @@ $pointer: pointer;
   display: inline-flex;
   margin: 10px;
   width: 47%;
+  background: #393a40;
+  h2 {
+    margin: 30px 0 0px 0;
+    color: $yellow-logo;
+  }
+  p{
+    margin: 0 10px;
+    width: fit-content;
+    
+    span {
+      color: $yellow-logo;
+      font-weight: 300;
+    }
+  }
   button {
     position: absolute;
     top: 0;
+    background: #cf1717;
+    border-style: none;
+    color: white;
+    padding: 8px;
+  }
+  .tot {
+    margin: 0;
+    width: auto;
+    padding: 5px;
+    border-top: 3px solid;
+    font-weight: bold;
+    letter-spacing: $spacing;
   }
 }

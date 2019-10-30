@@ -3,37 +3,19 @@ import '../css/App.css';
 
 export const OrderStructure = ({ arr, setOrderToReady, setOrderToDelivered }) => {
   return (
-    <div>
+    <main>
       {arr.map((product) => {
         return (
           <div className="Status" key={product.id}>
-            <h2>
-              PEDIDO
-              {product.estado}
-            </h2>
-            <p className="">
-              Cliente:
-              {product.name}
-            </p>
-            <p className="">
-              N° de Mesa:
-              {product.mesa}
-            </p>
-            <p className="">
-              Hora de Pedido:
-              {' '}
-              {product.date.toDate().getHours()}
-              :
-              {product.date.toDate().getMinutes()}
-            </p>
-            <div>
+            <h2>{product.estado.toUpperCase()}</h2>
+            <p className=""><span>Cliente: </span>{product.name}</p>
+            <p className=""><span>N° de Mesa: </span>{product.mesa}</p>
+            <p className=""><span>Hora de Pedido: </span>{product.date.toDate().getHours()}:{product.date.toDate().getMinutes()}</p>
+            
               {(product.estado === 'listo' || product.estado === 'entregado') && (
-                <p>
-                  Tiempo Transcurrido:
-                  {product.duration}
-                </p>
+                <p><span>Tiempo Transcurrido: </span>{product.duration}</p>
               )}
-            </div>
+            
             <table className="">
               <thead>
                 <tr>
@@ -59,8 +41,8 @@ export const OrderStructure = ({ arr, setOrderToReady, setOrderToDelivered }) =>
                 })}
               </tbody>
             </table>
-            <p className="">
-              Total = S/.
+            <p className="tot">
+              TOTAL = S/.
               {product.total}
             </p>
             {product.estado === 'pendiente' && (
@@ -76,6 +58,6 @@ export const OrderStructure = ({ arr, setOrderToReady, setOrderToDelivered }) =>
           </div>
         );
       })}
-    </div>
+    </main>
   );
 };

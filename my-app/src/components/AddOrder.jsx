@@ -38,13 +38,7 @@ export const AddOrder = ({
   return (
     <div className="Order">
       <h2>PEDIDO</h2>
-      <p>
-        {new Date().getHours()}
-        :
-        {new Date().getMinutes()}
-        :
-        {new Date().getSeconds()}
-      </p>
+      {/* <p>{Date(Date.now()).toString()}</p> */}
       <div>
         <label>
           Cliente:
