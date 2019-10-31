@@ -138,6 +138,10 @@ th, thead tr td {
   color: white;
   cursor: pointer;
 }
+.buttonApp:active {
+  background: black;
+  color: white;
+}
 
 .Total {
   background: #cf1717;

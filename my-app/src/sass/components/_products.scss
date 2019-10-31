@@ -133,6 +133,10 @@ body {
     @include buttons(10px,$red-logo);
     color: $text-color;
     cursor: $pointer;
+    &:active {
+      background: black;
+      color: $text-color;
+    }
   }
   @mixin buttons-order($color, $background, $font) {
     background: $background;
