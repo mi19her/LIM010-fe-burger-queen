@@ -57,9 +57,9 @@ export const GetOrders = () => {
       <nav className="Nav">
         {/* <button className="Nav-btn" id=""><Link to="/"> Home </Link></button> */}
         <ul>
-          <li className="Nav-btn" onClick={() => setState('pendiente')}>Pendientes</li>
-          <li className="Nav-btn" onClick={() => setState('listo')}>Listos</li>
-          <li className="Nav-btn" onClick={() => setState('entregado')}>Entregados</li>
+          <li className="Nav-btn target" onClick={() => setState('pendiente')}>Pendientes</li>
+          <li className="Nav-btn target" onClick={() => setState('listo')}>Listos</li>
+          <li className="Nav-btn target" onClick={() => setState('entregado')}>Entregados</li>
         </ul>
       </nav>
       <OrderStructure arr={orders} setOrderToReady={Ready} setOrderToDelivered={Delivered} />

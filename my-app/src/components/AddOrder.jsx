@@ -62,7 +62,7 @@ export const AddOrder = ({
             <td>DESCRIPCIÓN</td>
             <td>PU</td>
             <td>SUBTOTAL</td>
-            <td>ELIMINAR</td>
+            <td>BORRAR</td>
           </tr>
         </thead>
         <tbody>

@@ -40,30 +40,46 @@ body {
   
   .Flex {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;   
+    @media screen and (min-width:764px) {
+    
+      flex-direction: row;
+    }
+    div:nth-child(1) {
+      background: $text-color;
+      .Scroll {
+        overflow: scroll;
+        text-align: center;
+        height: 440px;
+         div {
+          width: 40%;
+          height: 190px;
+          display: inline-block;
+          margin: 5px;
+          border: 1px solid grey;
+          vertical-align: text-bottom;
+          text-align: -webkit-center;
+          cursor: $pointer;
+         }
+      }
+    }
+    .menu, .Order {
+      width: auto;  
+      @media screen and (min-width:764px) {
+        width: 50%;   
+      }
+    }
   }
   .Flex-header {
     display: flex;
     // justify-content: center;
     background: $yellow-logo;
   }
-  .Scroll {
-    overflow: scroll;
-    text-align: center;
-    height: 440px;
-     div {
-      width: 40%;
-      height: 190px;
-      display: inline-block;
-      margin: 5px;
-      border: 1px solid grey;
-      vertical-align: text-bottom;
-      text-align: -webkit-center;
-      cursor: $pointer;
-     }
-  }
+  
   table {
     margin-top: $font-button;
+    margin-bottom: $font-button*2;
     td th {
       text-align: left;
       vertical-align: top;
@@ -75,18 +91,6 @@ body {
     }
   }
   
-  .Order {
-    background: black;
-    color: $text-color;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    position: relative;
-    div {
-      display: flex;
-      justify-content: space-around;
-    }
-  }
   p {
     margin: 0;
   }
@@ -113,10 +117,7 @@ body {
     border-style: none;
     padding: 3px;
   }
-  .menu {
-    width: 50%;
-    background: $text-color;
-  }
+  
   th, thead tr td {
     border-bottom-style: ridge;
     font-weight: bold;
@@ -150,14 +151,17 @@ body {
     // font-weight: bold;
   }
   .Total {
-    @include buttons-order($text-color,$red-logo ,$font-button*2);
+    @include buttons-order($text-color,$red-logo ,$font-button);
     left: 0;
+    @media screen and (min-width:764px) {
+      font-size: $font-button*2;
+    }
   }
   .Send {
-    @include buttons-order(black, $yellow-logo ,25px );
+    @include buttons-order(black, $yellow-logo , $font-button);
     right: 0;
     border-style: none;
-    height: 50px;
+    height: 30px;
     cursor: $pointer;
     &:not(:disabled):hover {
       background: $yellow-logo;
@@ -167,12 +171,29 @@ body {
     &:disabled {
       background: #ddd;
     }
+    @media screen and (min-width:764px) {
+      font-size: 25px;
+      height: 50px;
+    }
+  }
+
+  .Order {
+    background: black;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    // width: 50%;
+    position: relative;
+    div {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 .Status {
   @extend .Order;
   display: inline-flex;
   margin: 10px;
-  width: 47%;
+  width: 90%;
   background: #393a40;
   h2 {
     margin: 30px 0 0px 0;
@@ -202,5 +223,8 @@ body {
     border-top: 3px solid;
     font-weight: bold;
     letter-spacing: $spacing;
+  }
+  @media screen and (min-width:764px) {
+    width: 47%;
   }
 }
