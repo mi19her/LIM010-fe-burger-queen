@@ -8,14 +8,28 @@ export const OrderStructure = ({ arr, setOrderToReady, setOrderToDelivered }) =>
         return (
           <div className="Status" key={product.id}>
             <h2>{product.estado.toUpperCase()}</h2>
-            <p className=""><span>Cliente: </span>{product.name}</p>
-            <p className=""><span>N° de Mesa: </span>{product.mesa}</p>
-            <p className=""><span>Hora de Pedido: </span>{product.date.toDate().getHours()}:{product.date.toDate().getMinutes()}</p>
-            
-              {(product.estado === 'listo' || product.estado === 'entregado') && (
-                <p><span>Tiempo Transcurrido: </span>{product.duration}</p>
-              )}
-            
+            <p className="">
+              <span>Cliente: </span>
+              {product.name}
+            </p>
+            <p className="">
+              <span>N° de Mesa: </span>
+              {product.mesa}
+            </p>
+            <p className="">
+              <span>Hora de Pedido: </span>
+              {product.date.toDate().getHours()}
+:
+              {product.date.toDate().getMinutes()}
+            </p>
+
+            {(product.estado === 'listo' || product.estado === 'entregado') && (
+            <p>
+              <span>Tiempo Transcurrido: </span>
+              {product.duration}
+            </p>
+            )}
+
             <table className="">
               <thead>
                 <tr>
