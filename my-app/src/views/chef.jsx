@@ -6,7 +6,7 @@ import { Header } from '../components/Header';
 export const Chef = () => {
   return (
     <div>
-      <Header></Header>
+      <Header />
       <GetOrders />
     </div>
   );

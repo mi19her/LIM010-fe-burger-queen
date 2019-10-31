@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { OrderStructure } from '../components/OrderStructure';
+import { OrderStructure } from './OrderStructure';
 import '../css/App.css';
 
 export const GetOrders = () => {
-	const [orders, setOrders] = useState([]);
-	const [state, setState] = useState('pendiente');
+  const [orders, setOrders] = useState([]);
+  const [state, setState] = useState('pendiente');
 
   useEffect(() => {
     firebase
@@ -41,27 +41,27 @@ export const GetOrders = () => {
       });
   };
 
-	const Delivered = ({ id }) => {
-		firebase
-			.firestore()
-			.collection('order')
-			.doc(id)
-			.update({
-				estado: 'entregado',
-			});
-	};
+  const Delivered = ({ id }) => {
+    firebase
+      .firestore()
+      .collection('order')
+      .doc(id)
+      .update({
+        estado: 'entregado',
+      });
+  };
 
-	return (
-		<div>
-		<nav className="Nav">
-			{/* <button className="Nav-btn" id=""><Link to="/"> Home </Link></button> */}
-			<ul>
-				<li className="Nav-btn" onClick={() => setState("pendiente")}>Pendientes</li>
-				<li className="Nav-btn" onClick={() => setState("listo")}>Listos</li>
-				<li className="Nav-btn" onClick={() => setState("entregado")}>Entregados</li>
-			</ul>
+  return (
+    <div>
+      <nav className="Nav">
+        {/* <button className="Nav-btn" id=""><Link to="/"> Home </Link></button> */}
+        <ul>
+          <li className="Nav-btn" onClick={() => setState('pendiente')}>Pendientes</li>
+          <li className="Nav-btn" onClick={() => setState('listo')}>Listos</li>
+          <li className="Nav-btn" onClick={() => setState('entregado')}>Entregados</li>
+        </ul>
       </nav>
-			<OrderStructure arr={orders} setOrderToReady={Ready} setOrderToDelivered={Delivered} />
-		</div>
-	);
+      <OrderStructure arr={orders} setOrderToReady={Ready} setOrderToDelivered={Delivered} />
+    </div>
+  );
 };

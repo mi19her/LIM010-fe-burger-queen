@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Products } from '../components/Products';
 import { AddOrder } from '../components/AddOrder';
 import { Header } from '../components/Header';
-import { Link } from 'react-router-dom';
 import '../css/App.css';
 
 export const Waiter = () => {
   const [selectProduct, setOrder] = useState([]);
 
   const incrementar = (prodId, cant) => {
-    const arrNew = selectProduct.map(element => {
+    const arrNew = selectProduct.map((element) => {
       if (prodId === element.id) {
         element.cantidad = cant;
       }
@@ -19,26 +19,26 @@ export const Waiter = () => {
   };
   const Total = () => {
     let acum = 0;
-    selectProduct.map(p => (acum += p.precio * p.cantidad));
+    selectProduct.map((p) => (acum += p.precio * p.cantidad));
     return acum;
   };
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <button className="btn-nav">
         <Link to="/chef"> Estados de pedidos </Link>
       </button>
       <main>
         <section className="Flex">
           <Products
-            addProductAtOrder={product => {
-              const found = selectProduct.find(p => {
+            addProductAtOrder={(product) => {
+              const found = selectProduct.find((p) => {
                 return p.id === product.id;
               });
 
               if (found !== undefined) {
-                const newArr = selectProduct.map(p => {
+                const newArr = selectProduct.map((p) => {
                   if (found.id === p.id) {
                     p.disable = true;
                   }
@@ -55,8 +55,8 @@ export const Waiter = () => {
             products={selectProduct}
             cantidad={incrementar}
             total={Total}
-            deleteRow={element => {
-              const newArray = selectProduct.filter(ele => {
+            deleteRow={(element) => {
+              const newArray = selectProduct.filter((ele) => {
                 return element.id !== ele.id;
               });
               setOrder(newArray);

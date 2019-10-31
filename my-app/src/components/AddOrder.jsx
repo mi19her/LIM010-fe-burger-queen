@@ -5,28 +5,29 @@ import 'firebase/firestore';
 
 const { useState } = React;
 
-export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
+export const AddOrder = ({
+  products, cantidad, total, deleteRow, order,
+}) => {
   const [name, setName] = useState('');
   const [mesa, setMesa] = useState('');
 
-  const functionName = e => {
+  const functionName = (e) => {
     setName(e.target.value);
   };
-  const functionMesa = e => {
+  const functionMesa = (e) => {
     setMesa(e.target.value);
   };
-  const addOrder = (name, mesa, product, date, estado, total) =>
-    firebase
-      .firestore()
-      .collection('order')
-      .add({
-        name,
-        mesa,
-        product,
-        date,
-        estado,
-        total,
-      });
+  const addOrder = (name, mesa, product, date, estado, total) => firebase
+    .firestore()
+    .collection('order')
+    .add({
+      name,
+      mesa,
+      product,
+      date,
+      estado,
+      total,
+    });
 
   const validateOrder = () => {
     return products.length > 0 && name.length > 0 && mesa.length > 0;
@@ -38,15 +39,23 @@ export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
     <div className="Order">
       <h2>PEDIDO</h2>
       <p>
-        {new Date().getHours()}:{new Date().getMinutes()}:{new Date().getSeconds()}
+        {new Date().getHours()}
+:
+        {new Date().getMinutes()}
+:
+        {new Date().getSeconds()}
       </p>
       <div>
         <label>
-          Cliente: <input placeholder="Nombre" value={name} onChange={functionName} />
+          Cliente:
+          {' '}
+          <input placeholder="Nombre" value={name} onChange={functionName} />
         </label>
-        <br></br>
+        <br />
         <label>
-          N° Mesa: <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa}></input>
+          N° Mesa:
+          {' '}
+          <input placeholder="N° de Mesa" value={mesa} onChange={functionMesa} />
         </label>
       </div>
       <table className="">
@@ -63,7 +72,7 @@ export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
+          {products.map((product) => (
             <tr key={product.id}>
               <td>
                 <input
@@ -71,15 +80,21 @@ export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
                   min="1"
                   max="100"
                   defaultValue={product.cantidad}
-                  onClick={e => {
+                  onClick={(e) => {
                     const p = e.target.value;
                     cantidad(product.id, p);
                   }}
                 />
               </td>
               <td>{product.nombre}</td>
-              <td>S/.{product.precio}</td>
-              <td>S/.{product.precio * product.cantidad}</td>
+              <td>
+S/.
+                {product.precio}
+              </td>
+              <td>
+S/.
+                {product.precio * product.cantidad}
+              </td>
               <td>
                 <i
                   className="fa fa-minus-circle"
@@ -87,26 +102,30 @@ export const AddOrder = ({ products, cantidad, total, deleteRow, order }) => {
                   onClick={() => {
                     deleteRow(product);
                   }}
-                ></i>
+                />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="Total">Total = S/.{total()}</p>
+      <p className="Total">
+Total = S/.
+        {total()}
+      </p>
       <button
         className="Send"
         onClick={() => {
           if (!disableSubmitButton) {
-            addOrder(name, mesa, products, new Date(), 'pendiente', total());
-            order([]);
-            setName('');
-            setMesa('');
+            addOrder(name, mesa, products, new Date(), 'pendiente', total())
+              .then(() => {
+                order([]);
+                setName('');
+                setMesa('');
+              });
           }
         }}
         disabled={disableSubmitButton}
       >
-        {' '}
         Enviar
       </button>
     </div>

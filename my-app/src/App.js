@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Welcome } from './views/welcome.js';
-import { Waiter } from './views/waiter.js';
-import { Chef } from './views/chef.js';
+import { Welcome } from './views/welcome';
+import { Waiter } from './views/waiter';
+import { Chef } from './views/chef';
 import './css/App.css';
 
 export const App = () => {
