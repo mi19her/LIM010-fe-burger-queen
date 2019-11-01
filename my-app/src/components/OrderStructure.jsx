@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import '../css/App.css';
 
 export const OrderStructure = ({ arr, setOrderToReady, setOrderToDelivered }) => {

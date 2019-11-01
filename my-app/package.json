@@ -14,7 +14,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "lint": "eslint --ext .jsx,.js src/  --fix",
+    "lint": "eslint --ext .jsx,.js src/ --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

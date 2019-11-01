@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Products } from '../components/Products';
 import { AddOrder } from '../components/AddOrder';
 import { Header } from '../components/Header';
-// import { GetOrders } from "../components/GetOrders";
 import '../css/App.css';
 
 export const Waiter = () => {
@@ -30,26 +29,29 @@ export const Waiter = () => {
   return (
     <div>
       <Header />
-      <button type="button" className="btn-nav"><Link to="/chef"> Estados de pedidos </Link></button>
+      <button className="btn-nav">
+        <Link to="/chef"> Estados de pedidos </Link>
+      </button>
       <main>
         <section className="Flex">
-          <Products addProductAtOrder={(product) => {
-            const found = selectProduct.find((p) => {
-              return p.id === product.id;
-            });
-
-            if (found !== undefined) {
-              const newArr = selectProduct.map((prod) => {
-                if (found.id === prod.id) {
-                  prod.disable = true;
-                }
-                return prod;
+          <Products
+            addProductAtOrder={(product) => {
+              const found = selectProduct.find((p) => {
+                return p.id === product.id;
               });
-              setOrder(newArr);
-            } else {
-              setOrder([...selectProduct, { ...product, cantidad: 1 }]);
-            }
-          }}
+
+              if (found !== undefined) {
+                const newArr = selectProduct.map((p) => {
+                  if (found.id === p.id) {
+                    p.disable = true;
+                  }
+                  return p;
+                });
+                setOrder(newArr);
+              } else {
+                setOrder([...selectProduct, { ...product, cantidad: 1 }]);
+              }
+            }}
           />
           <AddOrder
             order={setOrder}

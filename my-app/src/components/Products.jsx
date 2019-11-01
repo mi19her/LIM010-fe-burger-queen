@@ -39,10 +39,10 @@ export const Products = ({ addProductAtOrder }) => {
           {' '}
         </button>
       </div>
-      <div className="Scroll">
+      <div className="Scroll"  data-testid='productList'>
         {arr.map((product) => {
           return (
-            <div key={product.id} onClick={() => addProductAtOrder(product)}>
+            <div  data-testid= "child" key={product.id} onClick={() => addProductAtOrder(product)}>
               <p className="name">{product.nombre}</p>
               <p className="price">
                 S/.
