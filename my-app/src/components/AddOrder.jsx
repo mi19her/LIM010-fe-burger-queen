@@ -38,13 +38,7 @@ export const AddOrder = ({
   return (
     <div className="Order">
       <h2>PEDIDO</h2>
-      <p>
-        {new Date().getHours()}
-:
-        {new Date().getMinutes()}
-:
-        {new Date().getSeconds()}
-      </p>
+      {/* <p>{Date(Date.now()).toString()}</p> */}
       <div>
         <label>
           Cliente:
@@ -68,7 +62,7 @@ export const AddOrder = ({
             <td>DESCRIPCIÓN</td>
             <td>PU</td>
             <td>SUBTOTAL</td>
-            <td>ELIMINAR</td>
+            <td>BORRAR</td>
           </tr>
         </thead>
         <tbody>
@@ -88,11 +82,11 @@ export const AddOrder = ({
               </td>
               <td>{product.nombre}</td>
               <td>
-S/.
+                S/.
                 {product.precio}
               </td>
               <td>
-S/.
+                S/.
                 {product.precio * product.cantidad}
               </td>
               <td>
@@ -107,12 +101,14 @@ S/.
             </tr>
           ))}
         </tbody>
+
       </table>
       <p className="Total">
-Total = S/.
+        Total = S/.
         {total()}
       </p>
       <button
+        type="button"
         className="Send"
         onClick={() => {
           if (!disableSubmitButton) {

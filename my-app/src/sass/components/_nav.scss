@@ -6,21 +6,26 @@
     margin: 0;
     padding: 0;
     li {
-      padding: 10px;
-      display: inline-block;
+      list-style: none;
+      text-align: start;
+      padding: 5px;
       text-decoration: none;
       cursor: pointer;
       box-sizing: border-box;
-      height: 104px;
-      display: inline-flex;
-      align-items: center;
       color: $text-color;
       letter-spacing: $spacing;
       font-weight: 500;
       &:hover {
-        background: black;
-        
-      }  
+        background: black;   
+      }
+      
+      @media screen and (min-width:764px) {
+        padding: 10px;
+        display: inline-block;
+        height: 104px;
+        display: inline-flex;
+        align-items: center;
+      }
     }
   }
 }
@@ -39,9 +44,8 @@
     box-sizing: border-box;
     background: #cf1717;
     border-radius: 5px;
-    // &:hover {
-    //   background: $text-color;
-    //   color: #5e0000;
-    // }
   }
+}
+:target {
+  background: black;
 }

@@ -11,7 +11,10 @@ export const Waiter = () => {
   const incrementar = (prodId, cant) => {
     const arrNew = selectProduct.map((element) => {
       if (prodId === element.id) {
-        element.cantidad = cant;
+        return {
+          ...element,
+          cantidad: cant,
+        };
       }
       return element;
     });
@@ -19,7 +22,7 @@ export const Waiter = () => {
   };
   const Total = () => {
     let acum = 0;
-    selectProduct.map((p) => (acum += p.precio * p.cantidad));
+    selectProduct.map((p) => acum += p.precio * p.cantidad);
     return acum;
   };
 

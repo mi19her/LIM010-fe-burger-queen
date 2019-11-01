@@ -1,4 +1,9 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+body {
+  min-height: 100vh;
+  background: black;
+}
+
 .App, div {
   text-align: center;
 }
@@ -32,20 +37,23 @@
 
 .Flex {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
-
-.Flex-header {
-  display: flex;
-  background: #e8ba00;
+@media screen and (min-width: 764px) {
+  .Flex {
+    flex-direction: row;
+  }
 }
-
-.Scroll {
+.Flex div:nth-child(1) {
+  background: white;
+}
+.Flex div:nth-child(1) .Scroll {
   overflow: scroll;
   text-align: center;
-  height: 425px;
+  height: 440px;
 }
-.Scroll div {
+.Flex div:nth-child(1) .Scroll div {
   width: 40%;
   height: 190px;
   display: inline-block;
@@ -55,9 +63,23 @@
   text-align: -webkit-center;
   cursor: pointer;
 }
+.Flex .menu, .Flex .Order, .Flex .Status {
+  width: auto;
+}
+@media screen and (min-width: 764px) {
+  .Flex .menu, .Flex .Order, .Flex .Status {
+    width: 50%;
+  }
+}
+
+.Flex-header {
+  display: flex;
+  background: #e8ba00;
+}
 
 table {
   margin-top: 15px;
+  margin-bottom: 30px;
 }
 table td th {
   text-align: left;
@@ -67,19 +89,6 @@ table td th {
 table i {
   color: #e8ba00;
   cursor: pointer;
-}
-
-.Order, .Status {
-  background: black;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  position: relative;
-}
-.Order div, .Status div {
-  display: flex;
-  justify-content: space-around;
 }
 
 p {
@@ -113,10 +122,6 @@ input {
   padding: 3px;
 }
 
-.menu {
-  width: 50%;
-}
-
 th, thead tr td {
   border-bottom-style: ridge;
   font-weight: bold;
@@ -132,11 +137,15 @@ th, thead tr td {
   color: white;
   cursor: pointer;
 }
+.buttonApp:active {
+  background: black;
+  color: white;
+}
 
 .Total {
   background: #cf1717;
   color: white;
-  font-size: 30px;
+  font-size: 15px;
   padding: 5px;
   position: absolute;
   bottom: 0;
@@ -144,11 +153,16 @@ th, thead tr td {
   width: 50%;
   left: 0;
 }
+@media screen and (min-width: 764px) {
+  .Total {
+    font-size: 30px;
+  }
+}
 
 .Send {
   background: #e8ba00;
   color: black;
-  font-size: 25px;
+  font-size: 15px;
   padding: 5px;
   position: absolute;
   bottom: 0;
@@ -156,7 +170,7 @@ th, thead tr td {
   width: 50%;
   right: 0;
   border-style: none;
-  height: 50px;
+  height: 30px;
   cursor: pointer;
 }
 .Send:not(:disabled):hover {
@@ -167,15 +181,63 @@ th, thead tr td {
 .Send:disabled {
   background: #ddd;
 }
+@media screen and (min-width: 764px) {
+  .Send {
+    font-size: 25px;
+    height: 50px;
+  }
+}
+
+.Order, .Status {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.Order div, .Status div {
+  display: flex;
+  justify-content: space-around;
+}
 
 .Status {
   display: inline-flex;
   margin: 10px;
-  width: 47%;
+  width: 90%;
+  background: #393a40;
+}
+.Status h2 {
+  margin: 30px 0 0px 0;
+  color: #e8ba00;
+}
+.Status p {
+  margin: 0 10px;
+  width: fit-content;
+}
+.Status p span {
+  color: #e8ba00;
+  font-weight: 300;
 }
 .Status button {
   position: absolute;
   top: 0;
+  background: #cf1717;
+  border-style: none;
+  color: white;
+  padding: 8px;
+}
+.Status .tot {
+  margin: 0;
+  width: auto;
+  padding: 5px;
+  border-top: 3px solid;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+@media screen and (min-width: 764px) {
+  .Status {
+    width: 47%;
+  }
 }
 
 .Burger-logo {
@@ -216,20 +278,27 @@ th, thead tr td {
   padding: 0;
 }
 .Nav ul li {
-  padding: 10px;
-  display: inline-block;
+  list-style: none;
+  text-align: start;
+  padding: 5px;
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
-  height: 104px;
-  display: inline-flex;
-  align-items: center;
   color: white;
   letter-spacing: 2px;
   font-weight: 500;
 }
 .Nav ul li:hover {
   background: black;
+}
+@media screen and (min-width: 764px) {
+  .Nav ul li {
+    padding: 10px;
+    display: inline-block;
+    height: 104px;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 .btn-nav {
@@ -248,6 +317,10 @@ th, thead tr td {
   box-sizing: border-box;
   background: #cf1717;
   border-radius: 5px;
+}
+
+:target {
+  background: black;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -28,12 +28,12 @@ export const Products = ({ addProductAtOrder }) => {
     <div className="menu">
       <h1>LISTA DE PRODUCTOS</h1>
       <div>
-        <button className="buttonApp" onClick={() => setType('desayuno')}>
+        <button type="button" className="buttonApp" onClick={() => setType('desayuno')}>
           {' '}
           Desayuno
           {' '}
         </button>
-        <button className="buttonApp" onClick={() => setType('almuerzo_cena')}>
+        <button type="button" className="buttonApp" onClick={() => setType('almuerzo_cena')}>
           {' '}
           Almuerzo y cena
           {' '}
