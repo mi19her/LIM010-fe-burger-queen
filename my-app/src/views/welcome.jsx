@@ -5,7 +5,7 @@ import '../css/App.css';
 
 export const Welcome = () => {
   return (
-    <div className="App-header">
+    <div className="App-header" data-testid='welcome'>
       <img src={logo} alt="imagen de product" className="Burger-logo" />
       <button className="Button-mesero" id="ingresar">
         <Link to="/waiter"> Mesero </Link>
